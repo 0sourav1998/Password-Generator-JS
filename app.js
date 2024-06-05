@@ -22,6 +22,7 @@ let password = "";
 let passwordLength = 10;
 let checkCount = 0;
 
+
 //set passwordLength
 //reflecting passwodLength to the UI
 
@@ -31,9 +32,14 @@ const handleSlider = () => {
 };
 handleSlider();
 
+
+
 const setIndicator = (color) => {
   dataIndicator.style.backgroundColor = color;
 };
+
+setIndicator("#ccc")
+
 
 const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -63,10 +69,10 @@ const calcStrength = () => {
   let hasLower = false;
   let hasNum = false;
   let hasSym = false;
-  if (uppercaseCheck.checked) hasUpper = true;
-  if (lowercaseCheck.checked) hasLower = true;
-  if (numbersCheck.checked) hasNum = true;
-  if (symbolsCheck.checked) hasSym = true;
+  if (upperCase.checked) hasUpper = true;
+  if (lowerCase.checked) hasLower = true;
+  if (number.checked) hasNum = true;
+  if (symbolls.checked) hasSym = true;
 
   if (hasUpper && hasLower && (hasNum || hasSym) && passwordLength >= 8) {
     setIndicator("#0f0");
@@ -174,4 +180,5 @@ generateBtn.addEventListener("click", () => {
   password = passShuffle(Array.from(password));
 
   dataPasswordDisplay.value = password;
+  calcStrength();
 });

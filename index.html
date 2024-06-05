@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="wrapper">
       <h1>Password Generator</h1>
       <div class="display-container">
-        <input readonly placeholder="password" data-displaypassword />
-        <button data-copy>
-          <span data-copiedMsg></span>
+        <input readonly placeholder="password" data-displaypassword class="display"/>
+        <button class="copyBtn" data-copy>
+          <span class="copyText" data-copiedMsg></span>
           <img src="./assets/copy.svg" alt="" height="23" width="23" />
         </button>
       </div>
@@ -33,25 +37,25 @@
           />
         </div>
 
-        <div>
+        <div class="check">
           <input type="checkbox" id="uppercase" />
           <label for="uppercase">Includes Uppercase</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="lowercase" />
           <label for="lowercase">Includes Lowercase</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="number" />
           <label for="number">Includes Number</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="symbolls" />
           <label for="symbolls">Includes Symbolls</label>
         </div>
         <div class="strength-container">
           <p>Strength</p>
-          <div data-indicator></div>
+          <div data-indicator class="indicator"></div>
         </div>
 
         <button class="generateBtn">Generate Password</button>
